@@ -39,23 +39,23 @@ def equal():
         user_entry.insert(0, f_num / int(num_two))
 
 def cosine():
-	first_number = user_entry.get()
+	num_one = user_entry.get()
 	global f_num
-	f_num = float(first_number)
+	f_num = float(num_one)
 	cos_val=round((math.cos(math.radians(f_num))),2)
 	user_entry.insert(0,cos_val)
 
 def sine():
-	first_number = user_entry.get()
+	num_one = user_entry.get()
 	global f_num
-	f_num = float(first_number)
+	f_num = float(num_one)
 	sin_val=round((math.sin(math.radians(f_num))),2)
 	user_entry.insert(0,sin_val)
 
 def tangent():
-	first_number = user_entry.get()
+	num_one = user_entry.get()
 	global f_num
-	f_num = float(first_number)
+	f_num = float(num_one)
 	tan_val=round((math.tan(math.radians(f_num))),2)
 	user_entry.insert(0,tan_val)
 
