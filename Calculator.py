@@ -2,7 +2,9 @@ from tkinter import *
 import math
 base = Tk()
 base.title("Calculator")
-
+"""
+sets up the "entry box"... where users sees the numbers
+"""
 user_entry = Entry(base, width=45)
 user_entry.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
 
@@ -10,18 +12,15 @@ def clicked(number):
     current = user_entry.get()
     user_entry.delete(0, END)
     user_entry.insert(10, str(current)+ str(number))
-
-def clear():
+"""
+creates the clear button logic
+"""
+def clear() -> None:
     user_entry.delete(0, END)
 
-def add():
-    num_one = user_entry.get()
-    global f_num
-    global math
-    math = 'addition'
-    f_num = int(num_one)
-    user_entry.delete(0, END)
-
+""" 
+sets up logic for the equals button
+"""
 def equal():
     num_two = user_entry.get()
     user_entry.delete(0, END)
@@ -38,26 +37,48 @@ def equal():
     if math == 'division':
         user_entry.insert(0, f_num / int(num_two))
 
+"""
+sets up logic for cosine
+"""
 def cosine():
 	first_number = user_entry.get()
 	global f_num
 	f_num = float(first_number)
 	cos_val=round((math.cos(math.radians(f_num))),2)
 	user_entry.insert(0,cos_val)
-
+"""
+sets up logic for ine
+"""
 def sine():
 	first_number = user_entry.get()
 	global f_num
 	f_num = float(first_number)
 	sin_val=round((math.sin(math.radians(f_num))),2)
 	user_entry.insert(0,sin_val)
-
+"""
+sets up logic for tangent
+"""
 def tangent():
 	first_number = user_entry.get()
 	global f_num
 	f_num = float(first_number)
 	tan_val=round((math.tan(math.radians(f_num))),2)
 	user_entry.insert(0,tan_val)
+
+"""
+sets up logic for addition button
+"""
+def add():
+    num_one = user_entry.get()
+    global f_num
+    global math
+    math = 'addition'
+    f_num = int(num_one)
+    user_entry.delete(0, END)
+
+"""
+sets up logic for subtraction
+"""
 
 def subtraction():
     num_one = user_entry.get()
@@ -66,7 +87,9 @@ def subtraction():
     math = 'subtraction'
     f_num = int(num_one)
     user_entry.delete(0, END)
-
+"""
+sets up logic for multiplication
+"""
 def multiply():
     num_one = user_entry.get()
     global f_num
@@ -74,7 +97,9 @@ def multiply():
     math = ('multiplication')
     f_num = int(num_one)
     user_entry.delete(0, END)
-
+"""
+sets up logic for division
+"""
 def divide():
     num_one = user_entry.get()
     global f_num
@@ -82,7 +107,9 @@ def divide():
     math = 'division'
     f_num = int(num_one)
     user_entry.delete(0, END)
-
+"""
+sets up the buttons 
+"""
 btn_one = Button(base, text="1", padx=45, pady=20, command=lambda: clicked(1))
 btn_two = Button(base, text="2", padx=45, pady=20, command=lambda: clicked(2))
 btn_three = Button(base, text="3", padx=45, pady=20, command=lambda: clicked(3))
@@ -104,7 +131,9 @@ btn_subtract = Button(base, text="-", padx=45, pady=20, command=subtraction)
 btn_multiply = Button(base, text="x", padx=45, pady=20, command=multiply)
 btn_divide = Button(base, text="/", padx=45, pady=20, command=divide)
 
-# Put the buttons on the screen
+"""
+Put the buttons on the screen (calculator)
+"""
 
 btn_one.grid(row=1, column=0)
 btn_two.grid(row=1, column=1)
